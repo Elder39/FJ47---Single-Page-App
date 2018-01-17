@@ -2,7 +2,23 @@
     'use strict';
     /* Botao Sync */
     const usuario = 'brun_dutra@hotmail.com';
+    
     $('#sync').click(function () {
+
+        $(document).trigger('precisoSincronizar');
+
+    });
+
+    /* Carregar cartoes ao iniciar */
+
+    $.getJSON('https://ceep.herokuapp.com/cartoes/carregar?callback=?', { usuario }, function (res) {
+        res.cartoes.reverse().forEach(function (cartao) {
+            ctr.adicionaCartao(cartao.conteudo, '');
+        });
+    }
+    );
+
+    $(document).on('precisoSincronizar', function () {
 
         $('#sync').removeClass('botaoSync--sincronizado');
         $('#sync').addClass('botaoSync--esperando');
@@ -16,7 +32,6 @@
             cartoes.push(cartao);
         });
 
-        //cartoes.reverse();
         const mural = { usuario, cartoes };
 
         $.ajax({
@@ -36,14 +51,5 @@
             }
         });
     });
-
-    /* Carregar cartoes ao iniciar */
-
-    $.getJSON('https://ceep.herokuapp.com/cartoes/carregar?callback=?', { usuario }, function (res) {
-        res.cartoes.reverse().forEach(function (cartao) {
-            ctr.adicionaCartao(cartao.conteudo, '');
-        });
-    }
-    );
 
 })(cartaoController);

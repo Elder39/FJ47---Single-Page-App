@@ -1,6 +1,6 @@
 (function (ctr) {
     'use strict';
-    
+
     /* Formulário Novo Cartao */
 
     $('.novoCartao').submit(function (event) {
@@ -15,6 +15,8 @@
 
         campoTexto.val('');
         campoTexto.focus();
+        $(document).trigger('precisoSincronizar');
+
 
     });
 

@@ -1,5 +1,5 @@
 const cartaoController = (function () {
-    'use strict';
+    //'use strict';
 
     let contador = $('.cartao').length;
 
@@ -10,7 +10,12 @@ const cartaoController = (function () {
         const cartao = document.querySelector(`#cartao_${this.dataset.ref}`);
         cartao.classList.add('cartao--some');
         /* Arrow Function */
-        setTimeout(() => cartao.remove(), 700);
+        setTimeout(() => {
+            cartao.remove();
+            $(document).trigger('precisoSincronizar');
+        }, 700);
+
+
 
     }
 
@@ -51,6 +56,7 @@ const cartaoController = (function () {
                 .attr('data-ref', contador);
 
             const paragrafo = $('<p>')
+                .on('input', editaCartao)
                 .attr('contenteditable', 'true')
                 .addClass('cartao-conteudo')
                 .html(texto);
@@ -84,5 +90,13 @@ const cartaoController = (function () {
         botaoCartao.addEventListener('click', removeCartao);
     }
 
+    /* Editar cartao  */
+    var timer = 0;
+    function editaCartao() {
+
+        clearTimeout(timer);
+
+        timer = setTimeout(() => $(document).trigger('precisoSincronizar'), 2000);
+    }
     return { adicionaCartao, removeCartao };
 })();
