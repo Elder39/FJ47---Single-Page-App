@@ -94,6 +94,8 @@ const cartaoController = (function () {
     var timer = 0;
     function editaCartao() {
 
+        console.log(timer);
+        
         clearTimeout(timer);
 
         timer = setTimeout(() => $(document).trigger('precisoSincronizar'), 2000);
