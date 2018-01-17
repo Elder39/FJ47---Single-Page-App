@@ -1,16 +1,20 @@
-/* Formulário Novo Cartao */
+(function () {
 
-$('.novoCartao').submit(function (event) {
+    /* Formulário Novo Cartao */
 
-    event.preventDefault();
+    $('.novoCartao').submit(function (event) {
 
-    const campoTexto = $('.novoCartao-conteudo');
-    const texto = campoTexto.val().trim().replace(/\n/g, '<br>');
-    const cor = '';
+        event.preventDefault();
 
-    adicionaCartao(texto, cor);
+        const campoTexto = $('.novoCartao-conteudo');
+        const texto = campoTexto.val().trim().replace(/\n/g, '<br>');
+        const cor = '';
 
-    campoTexto.val('');
-    campoTexto.focus();
+        adicionaCartao(texto, cor);
 
-});
+        campoTexto.val('');
+        campoTexto.focus();
+
+    });
+
+})();

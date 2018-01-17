@@ -1,18 +1,22 @@
-/* Busca para autocomplete  */
+(function () {
 
-$('#busca').on('input', function () {
-    let digitado = $(this).val().trim();
-    const $cartoes = $('.cartao');
+    /* Busca para autocomplete  */
 
-    if (digitado) {
-        $cartoes.hide().filter(function () {
-            return $(this).find('.cartao-conteudo')
-                .text()
-                .match(new RegExp(digitado, 'i'));
-        }).show();
+    $('#busca').on('input', function () {
+        let digitado = $(this).val().trim();
+        const $cartoes = $('.cartao');
 
-    } else {
-        $cartoes.show();
-    }
+        if (digitado) {
+            $cartoes.hide().filter(function () {
+                return $(this).find('.cartao-conteudo')
+                    .text()
+                    .match(new RegExp(digitado, 'i'));
+            }).show();
 
-});
+        } else {
+            $cartoes.show();
+        }
+
+    });
+
+})();
