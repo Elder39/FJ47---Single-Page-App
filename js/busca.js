@@ -1,5 +1,5 @@
 (function () {
-
+    'use strict';
     /* Busca para autocomplete  */
 
     $('#busca').on('input', function () {

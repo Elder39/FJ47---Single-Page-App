@@ -1,5 +1,6 @@
-(function () {
-
+(function (ctr) {
+    'use strict';
+    
     /* Formulário Novo Cartao */
 
     $('.novoCartao').submit(function (event) {
@@ -10,11 +11,11 @@
         const texto = campoTexto.val().trim().replace(/\n/g, '<br>');
         const cor = '';
 
-        cartaoController.adicionaCartao(texto, cor);
+        ctr.adicionaCartao(texto, cor);
 
         campoTexto.val('');
         campoTexto.focus();
 
     });
 
-})();
+})(cartaoController);

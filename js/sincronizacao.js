@@ -1,5 +1,5 @@
-(function () {
-
+(function (ctr) {
+    'use strict';
     /* Botao Sync */
     const usuario = 'brun_dutra@hotmail.com';
     $('#sync').click(function () {
@@ -41,9 +41,9 @@
 
     $.getJSON('https://ceep.herokuapp.com/cartoes/carregar?callback=?', { usuario }, function (res) {
         res.cartoes.reverse().forEach(function (cartao) {
-            cartaoController.adicionaCartao(cartao.conteudo, '');
+            ctr.adicionaCartao(cartao.conteudo, '');
         });
     }
     );
 
-})();
+})(cartaoController);
