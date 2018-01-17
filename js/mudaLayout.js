@@ -1,6 +1,7 @@
 /* Muda o layout de exibicao (UX) */
 
 (function () {
+    'use strict';
 
     function mudaLayout() {
         const adicionouClasse = mural.classList.toggle('mural--linhas');
