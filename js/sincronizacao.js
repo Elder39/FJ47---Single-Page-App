@@ -41,7 +41,7 @@
 
     $.getJSON('https://ceep.herokuapp.com/cartoes/carregar?callback=?', { usuario }, function (res) {
         res.cartoes.reverse().forEach(function (cartao) {
-            adicionaCartao(cartao.conteudo, '');
+            cartaoController.adicionaCartao(cartao.conteudo, '');
         });
     }
     );

@@ -10,7 +10,7 @@
         const texto = campoTexto.val().trim().replace(/\n/g, '<br>');
         const cor = '';
 
-        adicionaCartao(texto, cor);
+        cartaoController.adicionaCartao(texto, cor);
 
         campoTexto.val('');
         campoTexto.focus();

@@ -1,4 +1,4 @@
-(function () {
+const cartaoController = (function () {
 
 
     let contador = $('.cartao').length;
@@ -84,4 +84,5 @@
         botaoCartao.addEventListener('click', removeCartao);
     }
 
+    return {adicionaCartao, removeCartao};
 })();
