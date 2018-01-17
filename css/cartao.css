@@ -24,6 +24,7 @@
 		width: 11em;
 		flex-basis: 11em;
 		background: green;
+		color: white;
 	}
 
 	.cartao--textoMedio {
