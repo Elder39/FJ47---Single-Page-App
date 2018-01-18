@@ -5,4 +5,5 @@ npm install gulp-usemin@0.3.14 --save-dev
 npm install gulp-concat@2.6.0 --save-dev
 npm install gulp-cssmin@0.1.7 --save-dev
 npm install gulp-babili --save-dev
+npm install browser-sync@2.9.8 --save-dev
 
