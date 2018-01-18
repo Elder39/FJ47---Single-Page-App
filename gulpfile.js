@@ -1,4 +1,11 @@
 const gulp = require('gulp');
-gulp.task('copy', function () {
+const clean = require('gulp-clean');
+
+gulp.task('copy', ['clean'], function () {
     gulp.src('src/**/**').pipe(gulp.dest('dist'));
 });
+
+gulp.task('clean', function () {
+    return gulp.src('dist').pipe(clean());
+});
+

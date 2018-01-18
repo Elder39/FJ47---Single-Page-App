@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/brunodutr/FJ47---Single-Page-App#readme",
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1"
   }
 }
