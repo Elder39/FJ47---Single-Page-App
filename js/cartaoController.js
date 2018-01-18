@@ -57,6 +57,7 @@ const cartaoController = (function () {
 
             const paragrafo = $('<p>')
                 .on('input', editaCartao)
+                .on('paste', event => event.preventDefault())
                 .attr('contenteditable', 'true')
                 .addClass('cartao-conteudo')
                 .html(texto);
@@ -93,12 +94,17 @@ const cartaoController = (function () {
     /* Editar cartao  */
     var timer = 0;
     function editaCartao() {
-
-        console.log(timer);
-        
+        const paragrafo = $(this);
         clearTimeout(timer);
 
-        timer = setTimeout(() => $(document).trigger('precisoSincronizar'), 2000);
+        timer = setTimeout(() => {
+            $(document).trigger('precisoSincronizar');
+            const tipo = decideTipoCartao(paragrafo.html());
+            paragrafo
+                .closest('.cartao')
+                .removeClass('cartao--textoPequeno cartao--textoMedio cartao--textoGrande')
+                .addClass(tipo);
+        }, 2000);
     }
     return { adicionaCartao, removeCartao };
 })();
