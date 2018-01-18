@@ -1,0 +1,2 @@
+npm init -y
+npm install gulp@3.9.0 --save-dev
