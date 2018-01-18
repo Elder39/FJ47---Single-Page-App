@@ -1,0 +1,24 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunodutr/FJ47---Single-Page-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brunodutr/FJ47---Single-Page-App/issues"
+  },
+  "homepage": "https://github.com/brunodutr/FJ47---Single-Page-App#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
